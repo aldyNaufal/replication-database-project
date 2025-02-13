@@ -1,5 +1,34 @@
 # MySQL Binlog Replication with Go
 
+
+## Mengaktifkan Binlog di MySQL
+Untuk mengaktifkan replikasi binlog, ubah file konfigurasi MySQL (`my.cnf` atau `my.ini`) pada database sumber:
+
+```ini
+[mysqld]
+server-id=1
+log-bin=mysql-bin
+binlog-format=ROW
+expire-logs-days=10
+```
+
+Setelah mengubah konfigurasi, restart MySQL:
+
+```sh
+systemctl restart mysql
+```
+
+### Memberikan Hak Akses Replikasi
+Jalankan perintah SQL berikut pada database sumber untuk memberikan akses replikasi:
+
+```sql
+CREATE USER 'replica'@'%' IDENTIFIED BY 'Replica2025!';
+GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'replica'@'%';
+FLUSH PRIVILEGES;
+```
+
+
+
 ## Deskripsi
 
 Program ini merupakan implementasi replikasi binlog MySQL menggunakan Go. Program ini membaca perubahan data dari database utama (source) dan mereplikasinya ke database tujuan (destination) menggunakan binlog MySQL.
