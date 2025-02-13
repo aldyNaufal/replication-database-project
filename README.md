@@ -1,7 +1,3 @@
-# replication-database-project
-
-##Notes
-
 # MySQL Binlog Replication with Go
 
 ## Deskripsi
