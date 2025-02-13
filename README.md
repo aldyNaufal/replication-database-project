@@ -30,7 +30,7 @@ Program ini merupakan implementasi replikasi binlog MySQL menggunakan Go. Progra
    ```
 
 3. **Konfigurasi koneksi database**
-   Sesuaikan variabel berikut dalam kode:
+   Sesuaikan variabel berikut dalam kode **main.go**:
    ```go
    var (
        prodHost = "10.2.7.108"   // IP Database Sumber
