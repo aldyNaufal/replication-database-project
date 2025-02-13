@@ -59,17 +59,17 @@ FLUSH PRIVILEGES;
    Sesuaikan variabel berikut dalam kode **main.go**:
    ```go
    var (
-       prodHost = "10.2.7.108"   // IP Database Sumber
-       prodPort = 3306            // Port Database Sumber
-       prodUser = "replica"      // User Database Sumber
-       prodPass = "Replica2025!" // Password Database Sumber
-       prodDB   = "kikomunal"    // Nama Database Sumber
+       prodHost = "<hostproduction>"   // IP Database Sumber
+       prodPort = <portproductiion>            // Port Database Sumber
+       prodUser = "<userproduction>"      // User Database Sumber
+       prodPass = "<passproduction>" // Password Database Sumber
+       prodDB   = "<databasenameproduction>"    // Nama Database Sumber
    
-       destHost = "10.1.35.243"  // IP Database Tujuan
-       destPort = 3306            // Port Database Tujuan
-       destUser = "replica"      // User Database Tujuan
-       destPass = "Replica2025!" // Password Database Tujuan
-       destDB   = "kikomunaldest" // Nama Database Tujuan
+       destHost = "<hostdsetination>"  // IP Database Tujuan
+       destPort = <portdestination>          // Port Database Tujuan
+       destUser = "<userdestination>"      // User Database Tujuan
+       destPass = "<passdestination>" // Password Database Tujuan
+       destDB   = "<databasenamedestination>" // Nama Database Tujuan
    )
    ```
 
