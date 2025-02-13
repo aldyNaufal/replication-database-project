@@ -1,5 +1,20 @@
 # MySQL Binlog Replication with Go
 
+## Deskripsi
+
+Program ini merupakan implementasi replikasi binlog MySQL menggunakan Go. Program ini membaca perubahan data dari database utama (source) dan mereplikasinya ke database tujuan (destination) menggunakan binlog MySQL.
+
+## Fitur
+
+- Mendukung operasi **INSERT**, **UPDATE**, dan **DELETE**
+- Menyimpan posisi terakhir dari binlog agar dapat melanjutkan replikasi saat program dijalankan kembali
+- Mendukung shutdown yang aman dengan menangani sinyal SIGINT dan SIGTERM
+
+## Prasyarat
+
+- Go 1.18 atau lebih baru
+- MySQL server dengan binary logging diaktifkan
+- Database dengan user yang memiliki akses ke binlog
 
 ## Mengaktifkan Binlog di MySQL
 Untuk mengaktifkan replikasi binlog, ubah file konfigurasi MySQL (`my.cnf` atau `my.ini`) pada database sumber:
@@ -26,24 +41,6 @@ CREATE USER 'replica'@'%' IDENTIFIED BY 'Replica2025!';
 GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'replica'@'%';
 FLUSH PRIVILEGES;
 ```
-
-
-
-## Deskripsi
-
-Program ini merupakan implementasi replikasi binlog MySQL menggunakan Go. Program ini membaca perubahan data dari database utama (source) dan mereplikasinya ke database tujuan (destination) menggunakan binlog MySQL.
-
-## Fitur
-
-- Mendukung operasi **INSERT**, **UPDATE**, dan **DELETE**
-- Menyimpan posisi terakhir dari binlog agar dapat melanjutkan replikasi saat program dijalankan kembali
-- Mendukung shutdown yang aman dengan menangani sinyal SIGINT dan SIGTERM
-
-## Prasyarat
-
-- Go 1.18 atau lebih baru
-- MySQL server dengan binary logging diaktifkan
-- Database dengan user yang memiliki akses ke binlog
 
 ## Instalasi dan Konfigurasi
 
