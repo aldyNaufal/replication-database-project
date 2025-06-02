@@ -112,8 +112,6 @@ FLUSH PRIVILEGES;
 - Hanya data yang ditambahkan setelah layanan ini berjalan yang akan direplikasi.
 - Data yang sudah ada sebelum layanan ini berjalan tidak akan tertangkap dalam binlog dan tidak akan direplikasi.
 
-## Lisensi
 
-Proyek ini menggunakan lisensi MIT. Silakan gunakan dan modifikasi sesuai kebutuhan Anda.
 
 
